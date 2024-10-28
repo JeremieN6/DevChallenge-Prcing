@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+:root{
+    --font-size-title:2rem;
+    --font-size-price:4rem;
+    --font-size-normal-text:1rem;
+
+    --black-color: #121826;
+    --white-color: #FFFFFF;
+    --bg-header-color: #F8FAFC;
+    --light-grey-color: #D9D9D9;
+    --black-text-color: #4D5562;
+    --header-border-bottom-color: #E5E7EB;
+    --shadow-color: #4D556233;
+
+    --blue-color: #3662E3;
+    --orange-color: #E9A23B;
+
+    --font-weight-bold: 700;
+    --font-weight-semi-bold: 600;
+    --font-weight-redular: 400;
+}
+*{
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+body{
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+.container__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: var(--bg-header-color);
+    border-bottom: 1px solid var(--header-border-bottom-color);
+    background-image: url(./assets/images/sand-background-image.png);
+}
+.title {
+    font-size: var(--font-size-title);
+    margin: 0;
+    text-align: center;
+}
+.contentSubtitle {
+    text-align: center;
+    color: var(--black-text-color);
+}
+.subtitle{
+    font-size: var(--font-size-normal-text);
+}
+.containerHeader{
+    margin-bottom: 60px;
+}
+table{
+    border-collapse: collapse;
+}
+.container__table-price{
+    margin-top: 20px;
+}
+.content__table-price{
+    display: flex;
+    justify-content: center;
+}
+.container__price-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.__label-price{
+    color: var(--blue-color);
+    font-size: var(--font-size-normal-text);
+    font-weight: var(--font-weight-semi-bold);
+}
+.blue-label{
+    background-color: var(--blue-color);
+    border-radius: 20px;
+    padding: 5px;
+    font-size: var(--font-size-normal-text);
+    color: var(--white-color);
+    margin-top: 0;
+    text-align: center;
+    font-weight: var(--font-weight-semi-bold);
+}
+.__price{
+    font-size: var(--font-size-price);
+    color: var(--black-color);
+    margin: 0;
+    font-weight: var(--font-weight-semi-bold);
+}
+.black-bg{
+    background-color: var(--black-color);
+    border-radius: 24px 24px 0 0;
+}
+.content__black-bg{
+    border-radius: 0;
+}
+.black-bg .__price{
+    color: var(--white-color);
+    font-weight: var(--font-weight-semi-bold);
+}
+.__duration{
+    margin: 0;
+}
+.black-bg .__duration{
+    color: var(--white-color);
+}
+
+.white-bg .__duration{
+    color: var(--black-text-color);
+}
+.black-bg, .white-bg{
+    text-align: center;
+    padding: 25px;
+}
+.black-bg{
+    padding: 25px 50px;
+}
+.container__data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.white-bg .container__data{
+    color: var(--black-color);
+}
+.black-bg .container__data{
+    color: var(--white-color);
+}
+.row__data-name{
+    background-color: var(--bg-header-color);
+    padding: 10px;
+    border-radius: 24px 0 0 0;
+    border-bottom: 1px solid var(--header-border-bottom-color);
+    text-align: left;
+}
+.last__row__data-name{
+    border-radius: 0 0 0 24px;
+    border-bottom-left-radius: 24px;
+    border-bottom: 0;
+    box-shadow: 0px 1px 0px var(--shadow-color);
+}
+.white-bg{
+    border-top: 1px solid var(--header-border-bottom-color);
+}
+.white-bg-price,
+.first-line-white-bg{
+    border-top: 0;
+}
+.container__cta {
+    display: flex;
+    justify-content: center;
+    transition: translateX(0);
+    cursor: pointer;
+}
+.arrw-icon {
+    transition: transform 250ms ease-in-out;
+}
+.container__cta:hover .cta_blue .arrw-icon,
+.container__cta:hover .cta_orange .arrw-icon{
+    transform: translateX(5px);
+    transform: rotate(-45deg);
+}
+.cta_blue {
+    color: var(--blue-color);
+    font-weight: var(--font-weight-semi-bold);
+    display: flex;
+    gap: 5px;
+}
+.cta_orange {
+    color: var(--white-color);
+    font-weight: var(--font-weight-semi-bold);
+    display: flex;
+    gap: 5px;
+}
+.last__content-black-bg{
+    background-color: var(--orange-color);
+    border-radius: 0 0 15px 15px;
+}
+.row__data-name-content{
+    border-radius: 0;
+}
+/* tr{
+    line-height: 0;
+} */
+</style>
+<body>
+    <div class="container__page">
+        <div class="content__page">
+            <div class="container__header">
+                <div class="content__header">
+                    <div class="containerTitle">
+                        <h1 class="title">Pricing & Plans</h1>
+                    </div>
+                    <div class="contentSubtitle">
+                        <p class="subtitle">
+                            Discover the plan that unlocks the transformative power <br> of digital art and join our vibrant community today.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container__table-price">
+                <div class="content__table-price">
+                    <table>
+                        <tr>
+                            <th>
+                                
+                            </th>
+                            <td class="white-bg white-bg-price">
+                                <div class="container__label-price">
+                                    <p class="__label-price">Free</p>
+                                </div>
+                                <div class="container__price">
+                                    <p class="__price">
+                                        $0
+                                    </p>
+                                </div>
+                                <div class="container__duration">
+                                    <p class="__duration">
+                                        Per month
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="white-bg white-bg-price">
+                                <div class="container__label-price">
+                                    <p class="__label-price">Team</p>
+                                </div>
+                                <div class="container__price">
+                                    <p class="__price">
+                                        $59
+                                    </p>
+                                </div>
+                                <div class="container__duration">
+                                    <p class="__duration">
+                                        Per month
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="black-bg">
+                                <div class="container__label-price">
+                                    <p class="__label-price blue-label">Popular</p>
+                                </div>
+                                <div class="container__price">
+                                    <p class="__price">
+                                        $99
+                                    </p>
+                                </div>
+                                <div class="container__duration">
+                                    <p class="__duration">
+                                        Per month
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="white-bg white-bg-price">
+                                <div class="container__label-price">
+                                    <p class="__label-price">Entreprise</p>
+                                </div>
+                                <div class="container__price">
+                                    <p class="__price">
+                                        $299
+                                    </p>
+                                </div>
+                                <div class="container__duration">
+                                    <p class="__duration">
+                                        Per month
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name">
+                                Website number
+                            </th>
+                            <td class="white-bg first-line-white-bg">
+                                <div class="container__data">
+                                    <p class="data">01</p>
+                                </div>
+                            </td>
+                            <td class="white-bg first-line-white-bg">
+                                <div class="container__data">
+                                    <p class="data">10</p>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <p class="data">50</p>
+                                </div>
+                            </td>
+                            <td class="white-bg first-line-white-bg">
+                                <div class="container__data">
+                                    <p class="data">Unlimited</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name row__data-name-content">
+                                Server storage
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        100 GB
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        500 GB
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <p class="data">1TB</p>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <p class="data">Unlimited</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name row__data-name-content">
+                                Database
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        15
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                       Unlimited
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        Unlimited
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name row__data-name-content">
+                                Unmetered Banswidth
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check-1.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check-1.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name row__data-name-content">
+                                SSD Disk
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check-1.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name row__data-name-content">
+                                VCPUS Fontworld
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check-1.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name row__data-name-content">
+                                Worldpress install
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check-1.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row__data-name last__row__data-name">
+                                Server speed 
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        -
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__data">
+                                    <div class="data">
+                                        <img src="./assets/images/check-1.svg" alt="" class="content-check">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+
+                            </th>
+                            <td class="white-bg">
+                                <div class="container__cta">
+                                    <div class="cta_blue">
+                                        Get Started <span><img src="./assets/images/down arrow-1.svg" alt="" class="arrw-icon"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__cta">
+                                    <div class="cta_blue">
+                                        Get Started <span><img src="./assets/images/down arrow-1.svg" alt="" class="arrw-icon"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="black-bg content__black-bg last__content-black-bg">
+                                <div class="container__cta">
+                                    <div class="cta_orange">
+                                        Get Started <span><img src="./assets/images/down arrow.svg" alt="" class="arrw-icon"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="white-bg">
+                                <div class="container__cta">
+                                    <div class="cta_blue">
+                                        Get Started <span><img src="./assets/images/down arrow-1.svg" alt="" class="arrw-icon"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
